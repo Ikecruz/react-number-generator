@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./components/header"
+import { useState } from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+
+    let [number, setNumber] = useState(null);
+
+    const changeNumber = () => {
+        setNumber(Math.floor(Math.random() * 100));
+    }
+
+    return(
+        <div>
+            <Header />
+            <div className="body_contain">
+                <div>
+                    <p className="generated">Generated Number :</p>
+                    <p className="number">{ number || "Click button to generate number" }</p>
+                    <button className="btn" onClick={() => changeNumber()}>Generate Number</button>
+                </div>
+            </div>
+        </div>
+    )
 }
 
 export default App;
