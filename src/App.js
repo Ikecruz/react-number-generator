@@ -1,5 +1,6 @@
-import Header from "./components/header"
+import Header from "./components/header";
 import { useState } from "react";
+import Footer from "./components/footer";
 
 const App = () => {
 
@@ -19,6 +20,7 @@ const App = () => {
                     <button className="btn" onClick={() => changeNumber()}>Generate Number</button>
                 </div>
             </div>
+            <Footer />
         </div>
     )
 }
